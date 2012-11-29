@@ -36,6 +36,8 @@ namespace Kudu.Core.SourceControl.Git
             _gitExe.EnvironmentVariables[KnownEnviornment.APPPATH] = deploymentEnvironment.ApplicationPath;
             _gitExe.EnvironmentVariables[KnownEnviornment.MSBUILD] = deploymentEnvironment.MSBuildExtensionsPath;
             _gitExe.EnvironmentVariables[KnownEnviornment.DEPLOYER] = "";
+
+            _gitExe.EnvironmentVariables[Constants.NodeModulesBinPathEnvKey] = deploymentEnvironment.NodeModulesBinPath;
         }
 
         private string PostReceiveHookPath
